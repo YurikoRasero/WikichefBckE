@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/WikiChef
+    username: postgres
+    password: Yupi
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: SECRET_KAWAII_12345
+  expiration: 86400000

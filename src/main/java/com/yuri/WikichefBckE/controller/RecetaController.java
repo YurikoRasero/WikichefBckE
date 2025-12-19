@@ -1,6 +1,7 @@
 package com.yuri.WikichefBckE.controller;
 
-import com.yuri.WikichefBckE.Service.RecetaService;
+import com.yuri.WikichefBckE.modelo.Receta;
+import com.yuri.WikichefBckE.service.impl.RecetaImpl;
 import com.yuri.WikichefBckE.dto.RecetaDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -8,22 +9,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.yuri.WikichefBckE.Service.RecetaService.listar;
-
 @RestController
 @RequestMapping("/api/recetas")
 @RequiredArgsConstructor
 public class RecetaController {
 
-    private final RecetaService recetaService;
+    private final RecetaImpl recetaService;
 
     /**
      * Crear receta
      */
     @PostMapping
-    public ResponseEntity<RecetaDTO> crearReceta(
+    public ResponseEntity<Receta> crearReceta(
             @RequestBody RecetaDTO recetaDTO) {
-        RecetaDTO creada = recetaService.crear(recetaDTO);
+        Receta creada = recetaService.crear(recetaDTO);
         return ResponseEntity.ok(creada);
     }
 
@@ -32,7 +31,7 @@ public class RecetaController {
      */
     @GetMapping
     public ResponseEntity<List<RecetaDTO>> listarRecetas() {
-        return ResponseEntity.ok(listar());
+        return ResponseEntity.ok(recetaService.listar());
     }
 
     /**
@@ -41,18 +40,17 @@ public class RecetaController {
     @GetMapping("/{id}")
     public ResponseEntity<RecetaDTO> obtenerReceta(
             @PathVariable Integer id) {
-        return ResponseEntity.ok(RecetaService.obtenerPorId(id));
+        return ResponseEntity.ok(recetaService.obtenerPorId(id));
     }
 
     /**
      * Actualizar receta
      */
     @PutMapping("/{id}")
-    public ResponseEntity<RecetaDTO> actualizarReceta(
+    public ResponseEntity<Receta> actualizarReceta(
             @PathVariable Integer id,
             @RequestBody RecetaDTO recetaDTO) {
-        return ResponseEntity.ok(
-                RecetaService.actualizar(id, recetaDTO)
+        return ResponseEntity.ok(recetaService.actualizar(id, recetaDTO)
         );
     }
 
@@ -62,7 +60,7 @@ public class RecetaController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarReceta(
             @PathVariable Integer id) {
-        RecetaService.eliminar(id);
+        recetaService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -1,6 +1,6 @@
 package com.yuri.WikichefBckE.controller;
 
-import com.yuri.WikichefBckE.Service.ComentarioService;
+import com.yuri.WikichefBckE.service.impl.ComentarioImpl;
 import com.yuri.WikichefBckE.dto.ComentarioDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ComentarioController {
 
-    private final ComentarioService comentarioService;
+    private final ComentarioImpl comentarioService;
 
     /**
      * Crear comentario

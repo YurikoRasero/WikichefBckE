@@ -1,7 +1,7 @@
-package com.yuri.WikichefBckE.Service.impl;
+package com.yuri.WikichefBckE.service.impl;
 
-import com.yuri.WikichefBckE.Service.AuthenticationService;
-import com.yuri.WikichefBckE.Service.JwtService;
+import com.yuri.WikichefBckE.service.AuthenticationService;
+import com.yuri.WikichefBckE.service.JwtService;
 import com.yuri.WikichefBckE.dao.request.SignInRequest;
 import com.yuri.WikichefBckE.dao.request.SignUpRequest;
 import com.yuri.WikichefBckE.dao.response.JwtAuthenticationResponse;

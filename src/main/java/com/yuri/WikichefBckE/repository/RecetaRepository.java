@@ -17,5 +17,5 @@ public interface RecetaRepository extends JpaRepository<Receta, Integer> {
 
     Page<Receta> findByTituloContainingIgnoreCase(String q, Pageable pageable);
 
-    Page<Receta> searchByIngredient(String ing, Pageable pageable);
+    Page<Receta> findByIngredientesContainingIgnoreCase(String q, Pageable pageable);
 }

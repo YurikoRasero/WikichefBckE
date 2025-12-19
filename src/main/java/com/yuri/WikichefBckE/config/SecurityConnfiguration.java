@@ -1,7 +1,7 @@
 package com.yuri.WikichefBckE.config;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
-import com.yuri.WikichefBckE.Service.UserService;
+import com.yuri.WikichefBckE.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

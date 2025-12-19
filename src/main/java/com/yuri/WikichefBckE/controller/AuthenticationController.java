@@ -1,6 +1,6 @@
 package com.yuri.WikichefBckE.controller;
 
-import com.yuri.WikichefBckE.Service.AuthenticationService;
+import com.yuri.WikichefBckE.service.AuthenticationService;
 import com.yuri.WikichefBckE.dao.request.SignUpRequest;
 import com.yuri.WikichefBckE.dao.request.SignInRequest;
 import com.yuri.WikichefBckE.dao.response.JwtAuthenticationResponse;

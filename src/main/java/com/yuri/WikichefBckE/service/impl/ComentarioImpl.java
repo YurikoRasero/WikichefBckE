@@ -1,21 +1,24 @@
-package com.yuri.WikichefBckE.Service;
+package com.yuri.WikichefBckE.service.impl;
 
 import com.yuri.WikichefBckE.dto.ComentarioDTO;
+import com.yuri.WikichefBckE.dto.UserDTO;
 import com.yuri.WikichefBckE.modelo.Comentario;
 import com.yuri.WikichefBckE.modelo.Receta;
 import com.yuri.WikichefBckE.modelo.User;
 import com.yuri.WikichefBckE.repository.ComentarioRepository;
 import com.yuri.WikichefBckE.repository.RecetaRepository;
 import com.yuri.WikichefBckE.repository.UserRepository;
+import com.yuri.WikichefBckE.service.ComentarioService;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.Nullable;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ComentarioService {
+public class ComentarioImpl implements ComentarioService {
 
     private final ComentarioRepository repo;
     private final UserRepository userRepo;
@@ -38,23 +41,35 @@ public class ComentarioService {
         return repo.findByRecetaIdOrderByIdDesc(recetaId);
     }
 
+    @Override
+    public UserDetailsService userDetailsService() {
+        return null;
+    }
+
     public ComentarioDTO crear(ComentarioDTO comentarioDTO) {
         return null;
     }
 
-    public @Nullable ComentarioDTO obtenerPorId(Integer id) {
+    @Override
+    public List<ComentarioDTO> listar() {
+        return List.of();
+    }
+
+    @Override
+    public ComentarioDTO obtenerPorId(Integer id) {
         return null;
     }
 
-    public @Nullable ComentarioDTO actualizar(Integer id, ComentarioDTO comentarioDTO) {
+
+    @Override
+    public ComentarioDTO actualizar(Integer id, ComentarioDTO comentarioDTO) {
         return null;
     }
 
+    @Override
     public void eliminar(Integer id) {
 
     }
 
-    public @Nullable List<ComentarioDTO> listar() {
-        return null;
-    }
+
 }

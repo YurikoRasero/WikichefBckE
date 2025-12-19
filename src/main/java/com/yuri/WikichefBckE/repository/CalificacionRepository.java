@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface CalificacionRepository extends JpaRepository<Calificacion, Integer> {
-    Optional<Calificacion> findByUsuarioIdAndRecetaId(int u, int r);
+    Optional<Calificacion> findByUsersIdAndRecetaId(Integer uId, Integer recetaId);
     List<Calificacion> findByRecetaId(int recetaId);
 
 }

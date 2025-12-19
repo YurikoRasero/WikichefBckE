@@ -2,8 +2,8 @@ package com.yuri.WikichefBckE.config;
 import org.springframework.lang.NonNull;
 
 import java.io.IOException;
-import com.yuri.WikichefBckE.Service.JwtService;
-import com.yuri.WikichefBckE.Service.UserService;
+import com.yuri.WikichefBckE.service.JwtService;
+import com.yuri.WikichefBckE.service.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

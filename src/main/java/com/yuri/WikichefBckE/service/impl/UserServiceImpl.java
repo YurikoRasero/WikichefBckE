@@ -1,6 +1,6 @@
-package com.yuri.WikichefBckE.Service.impl;
+package com.yuri.WikichefBckE.service.impl;
 
-import com.yuri.WikichefBckE.Service.UserService;
+import com.yuri.WikichefBckE.service.UserService;
 import com.yuri.WikichefBckE.dto.UserDTO;
 import com.yuri.WikichefBckE.modelo.User;
 import com.yuri.WikichefBckE.repository.UserRepository;
@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +35,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO crear(UserDTO userDTO) {
+        return null;
+    }
+
+    @Override
+    public List<UserDTO> listar() {
+        return List.of();
+    }
+
+    @Override
+    public UserDTO obtenerPorId(Integer id) {
+        return null;
+    }
+
+    @Override
+    public UserDTO actualizar(Integer id, UserDTO userDTO) {
         return null;
     }
 

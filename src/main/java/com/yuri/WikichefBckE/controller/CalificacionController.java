@@ -1,6 +1,6 @@
 package com.yuri.WikichefBckE.controller;
 
-import com.yuri.WikichefBckE.Service.CalificacionService;
+import com.yuri.WikichefBckE.service.impl.CalificacionImpl;
 import com.yuri.WikichefBckE.dto.CalificacionDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +9,9 @@ import java.util.List;
 
 public class CalificacionController {
 
-    private final CalificacionService service;
+    private final CalificacionImpl service;
 
-    public CalificacionController(CalificacionService service) {
+    public CalificacionController(CalificacionImpl service) {
         this.service = service;
     }
 

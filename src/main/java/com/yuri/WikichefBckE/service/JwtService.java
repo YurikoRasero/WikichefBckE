@@ -1,4 +1,4 @@
-package com.yuri.WikichefBckE.Service;
+package com.yuri.WikichefBckE.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 

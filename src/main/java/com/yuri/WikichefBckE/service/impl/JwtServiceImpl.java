@@ -1,6 +1,6 @@
-package com.yuri.WikichefBckE.Service.impl;
+package com.yuri.WikichefBckE.service.impl;
 
-import com.yuri.WikichefBckE.Service.JwtService;
+import com.yuri.WikichefBckE.service.JwtService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

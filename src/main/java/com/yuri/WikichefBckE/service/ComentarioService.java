@@ -8,7 +8,7 @@ import java.util.List;
 public interface ComentarioService {
     UserDetailsService userDetailsService();
 
-    ComentarioDTO crear(ComentarioDTO comentarioDTO);
+    ComentarioDTO crear(ComentarioDTO comentarioDTO, Integer recetaId);
     List<ComentarioDTO> listar();
     ComentarioDTO obtenerPorId(Integer id);
     ComentarioDTO actualizar(Integer id, ComentarioDTO comentarioDTO);

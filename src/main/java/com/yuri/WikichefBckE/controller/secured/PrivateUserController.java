@@ -1,19 +1,25 @@
-package com.yuri.WikichefBckE.controller;
+package com.yuri.WikichefBckE.controller.secured;
 
 import com.yuri.WikichefBckE.dto.UserDTO;
 import com.yuri.WikichefBckE.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/private/v1/users")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
-public class UserController {
-
+public class PrivateUserController {
 
     private final UserService userService;
 
@@ -21,6 +27,7 @@ public class UserController {
      * Crear usuario
      */
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDTO> crearUsuario(
             @RequestBody UserDTO userDTO) {
         UserDTO creado = userService.crear(userDTO);
@@ -31,6 +38,7 @@ public class UserController {
      * Listar usuarios
      */
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<UserDTO>> listarUsuarios() {
         return ResponseEntity.ok(userService.listar());
     }
@@ -39,16 +47,17 @@ public class UserController {
      * Obtener usuario por ID
      */
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDTO> obtenerUsuario(
             @PathVariable Integer id) {
-        ResponseEntity<UserDTO> ok = ResponseEntity.ok(userService.obtenerPorId(id));
-        return ok;
+        return ResponseEntity.ok(userService.obtenerPorId(id));
     }
 
     /**
      * Actualizar usuario
      */
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<UserDTO> actualizarUsuario(
             @PathVariable Integer id,
             @RequestBody UserDTO userDTO) {
@@ -61,9 +70,11 @@ public class UserController {
      * Eliminar usuario
      */
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void> eliminarUsuario(
             @PathVariable Integer id) {
         userService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
 }
+

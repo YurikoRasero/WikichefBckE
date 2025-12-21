@@ -9,7 +9,7 @@ public interface CalificacionService {
 
     UserDetailsService userDetailsService();
 
-    CalificacionDTO crear(CalificacionDTO calificacionDTO);
+    CalificacionDTO crear(CalificacionDTO calificacionDTO, Integer recetaId);
     List<CalificacionDTO> listar();
     CalificacionDTO obtenerPorId(Integer id);
     CalificacionDTO actualizar(Integer id,CalificacionDTO calificacionDTO);

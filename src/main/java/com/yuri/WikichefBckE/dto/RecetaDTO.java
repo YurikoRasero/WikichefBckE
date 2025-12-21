@@ -15,6 +15,11 @@ public class RecetaDTO {
         private String titulo;
         private String descripcion;
         private String ingredientes;  // JSON string
+        /**
+         * Autor de la receta. 
+         * IGNORADO en requests - se establece automáticamente desde el usuario autenticado.
+         * Incluido en responses para mostrar información del autor.
+         */
         private UserDTO autor;
         private List<String> etiquetas;
     }

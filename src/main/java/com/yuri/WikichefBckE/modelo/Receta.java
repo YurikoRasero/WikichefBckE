@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name= "_receta")
 public class Receta {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String titulo;
@@ -33,8 +33,12 @@ public class Receta {
 
 
     @ManyToOne
+    @JoinColumn(name = "autor_id")
     private User autor;
     @ElementCollection
+    @CollectionTable(name = "_receta_etiquetas", joinColumns = @JoinColumn(name = "_receta_id"))
+    @Column(name = "etiquetas")
     private List<String> etiquetas;
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 }
